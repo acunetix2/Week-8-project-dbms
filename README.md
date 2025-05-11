@@ -1,5 +1,5 @@
 # Week-8-project-dbms
-# Library Management System (MySQL)
+# Library Management System 
 
 ## Project Description
 
