@@ -17,17 +17,6 @@ CREATE TABLE Staff (
     email VARCHAR(100) UNIQUE
 );
 
--- Books table
-CREATE TABLE Books (
-    book_id INT AUTO_INCREMENT PRIMARY KEY,
-    title VARCHAR(255) NOT NULL,
-    isbn VARCHAR(20) UNIQUE NOT NULL,
-    publisher VARCHAR(100),
-    published_year YEAR,
-    total_copies INT NOT NULL,
-    available_copies INT NOT NULL
-);
-
 -- Authors table
 CREATE TABLE Authors (
     author_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -35,12 +24,16 @@ CREATE TABLE Authors (
     last_name VARCHAR(50) NOT NULL
 );
 
--- Book_Authors table (Many-to-Many)
-CREATE TABLE Book_Authors (
-    book_id INT NOT NULL,
+-- Books table (with foreign key to Authors)
+CREATE TABLE Books (
+    book_id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    isbn VARCHAR(20) UNIQUE NOT NULL,
+    publisher VARCHAR(100),
+    published_year YEAR,
+    total_copies INT NOT NULL,
+    available_copies INT NOT NULL,
     author_id INT NOT NULL,
-    PRIMARY KEY (book_id, author_id),
-    FOREIGN KEY (book_id) REFERENCES Books(book_id),
     FOREIGN KEY (author_id) REFERENCES Authors(author_id)
 );
 
@@ -65,4 +58,3 @@ CREATE TABLE Returns (
     condition_notes TEXT,
     FOREIGN KEY (borrowing_id) REFERENCES Borrowings(borrowing_id)
 );
-
