@@ -45,7 +45,7 @@ This is a **Library Management System**. It models a real-world library that kee
 
 4. **Verify Database Creation**:
 
-   - After executing the script, verify the tables were created by running the following query in MySQL Workbench:
+   - After executing the script, verify the tables were created by running the following query in MySQL Workbench new query tab:
 
      **USE library_management;**
      **SHOW TABLES;**
