@@ -3,7 +3,7 @@
 
 ## Project Description
 
-This is a **Library Management System**. It models a real-world library that keeps track of:
+This is a **Library Management System**. It keeps track of:
 
 - Books and their authors
 - Registered library members
